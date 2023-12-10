@@ -1,0 +1,7 @@
+.text-123 {
+  max-width: 120px;
+
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

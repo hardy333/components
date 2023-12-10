@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import useCustomers from "../../hooks/api/useCustomers";
+import "./customers.css";
 
 const Customers = () => {
-    const [count, setCount] = useState(0)
-    const {data: customers} = useCustomers({queryKey: "customers", customerFilerValue: "retailers", count})
+  const [count, setCount] = useState(0);
+  const { data: customers } = useCustomers({
+    queryKey: "customers",
+    customerFilerValue: "retailers",
+    count,
+  });
 
-    console.log(customers)
+  console.log(customers);
 
+  useEffect(() => {
+    console.log("In Effect");
+  }, [customers]);
 
-    useEffect(() => {
-        console.log("In Effect")
-
-
-    }, [customers])
- 
-
-  return <div>Customers
-    <button onClick={() => setCount(count + 1)}>{count}</button>
-    
-    
-  </div>;
+  return (
+    <div>
+      Customers
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+      <div className="text-123">Lorem ipsum dolor sit amet.</div>
+    </div>
+  );
 };
 
 export default Customers;
