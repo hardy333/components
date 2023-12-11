@@ -1,13 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { axiosPrivate } from "../../axios/axios";
 
-// RBFront/accountID/SupplierID
 
 const queryFn = async (p) => {
     const {retailerId, vendorId} = p.queryKey[1]
     const res = await axiosPrivate.get(`RBFront/${retailerId}/${vendorId}`)
-    
-    // const res = await axiosPrivate.get(`RBFront/${"R00001"}/${"D00002"}`)
     return res.data
 }
 
@@ -18,7 +15,6 @@ const queryFn = async (p) => {
 const useRetroBonuses = ({retailerId, vendorId}) => {
   return useQuery({
     queryKey: ["retro-bonuses", {retailerId, vendorId}],
-    // queryKey: ["retro-bonuses", "ssss", "hdhjd-dkjd"],
     queryFn: queryFn,
     select: (data) => {
         console.log("Select")

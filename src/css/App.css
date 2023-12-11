@@ -1,0 +1,88 @@
+@import url("//cdn.web-fonts.ge/fonts/dejavu-sans-condensed/css/dejavu-sans-condensed.min.css");
+
+@import url("//cdn.web-fonts.ge/fonts/dejavu-sans/css/dejavu-sans.min.css");
+
+@font-face {
+  font-family: "nova-square";
+  src: url(../fonts/NovaSquare-Regular.ttf);
+}
+@font-face {
+  font-family: "glaho";
+  src: url(../fonts/bpg_glaho.ttf);
+}
+@font-face {
+  font-family: "arial";
+  src: url(../fonts/bpg_arial_2009.ttf);
+}
+
+@font-face {
+  font-family: "arial-geo";
+  src: url(../fonts/arial_geo.ttf);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+  font-family: "DejaVu Sans", sans-serif;
+
+  /* bg */
+  /* bg */
+  --color-bg-1: #fff;
+  /* Dashboard Main content bg  */
+  --color-bg-2: #f9f8fc;
+  /* Aside Bg */
+  --color-bg-3: #1c1238;
+
+  /* Text */
+  /* Text */
+  --color-text-1: #211543;
+  /* Icons Color, skin color on light bg */
+  --color-text-2: #d0c7e8;
+
+  /* General */
+  /* General */
+  --color-primary: #6e0ff5;
+  --color-danger: #ff3360;
+  --color-warning: #ffa23c;
+  --color-success: #01c6b5;
+
+  color: var(--color-text-1);
+}
+
+.text-font-1 {
+  font-family: "nova-square";
+  background-color: gray;
+  margin-bottom: 10px;
+}
+
+.text-font-2 {
+  font-family: "DejaVu Sans Condensed", sans-serif;
+  background-color: gray;
+  margin-bottom: 10px;
+}
+.text-font-3 {
+  font-family: "DejaVu Sans", sans-serif;
+  background-color: gray;
+  margin-bottom: 10px;
+}
+.text-font-4 {
+  font-family: "glaho", sans-serif;
+  background-color: gray;
+  margin-bottom: 10px;
+}
+.text-font-5 {
+  font-family: "arial", sans-serif;
+  background-color: gray;
+  margin-bottom: 10px;
+}
+.text-font-6 {
+  font-family: "arial-geo", sans-serif;
+  background-color: gray;
+  margin-bottom: 10px;
+}
