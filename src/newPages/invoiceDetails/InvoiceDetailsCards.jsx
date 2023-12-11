@@ -11,7 +11,7 @@ const InvoiceDetailsCards = () => {
       {data?.map((invoice) => {
         
         return (
-          <article className={`${card}`} style={{borderLeft: `2px solid red`}}>
+          <article key={invoice.invoiceID} className={`${card}`} style={{borderLeft: `2px solid red`}}>
             <ul className={`${cardUl}`}>
               <li className={`${cardLi}  `}>
                 <span className={`${cardLiLabel} `}>მაღაზია</span>

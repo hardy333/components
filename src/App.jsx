@@ -1,25 +1,14 @@
-import { useState } from "react";
 
 import "./App.css";
-import LoadingSpinner from "./components/loadingSpinner/LoadingSpinner";
-import OrderStatusMenu from "./components/orderStatusMenu.jsx/orderStatusMenu";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { axiosPrivate } from "./axios/axios";
-import Customers from "./newPages/customers/Customers";
-import RetroBonuses from "./newPages/retroBonuses/RetroBonuses";
-import MobileSwitch from "./components/mobileSwitch/MobileSwitch";
-import CatalogueCards from "./newPages/catalogue/CatalogueCards";
-import InvoiceCards from "./newPages/invoices/InvoiceCards";
-import OrdersCards from "./newPages/orders/OrdersCardsContainer";
+
 import InvoiceDetailsCards from "./newPages/invoiceDetails/InvoiceDetailsCards";
-import { Route, Routes } from "react-router-dom";
 import "./css/App.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import InvoiceCards from "./newPages/invoices/InvoiceCards";
+import CatalogueCards from "./newPages/catalogue/CatalogueCards";
+import OrdersCards from "./newPages/orders/OrdersCardsContainer";
 import RetroBonuses from "./newPages/retroBonuses/RetroBonuses";
-import Customers from "./newPages/customers/Customers";
-import RetroBonusDetails from "./newPages/retroBonuses/RetroBonusDetails";
-
 const queryClient = new QueryClient();
 
 function App() {
@@ -34,10 +23,16 @@ function App() {
       {/* <LoadingSpinner size="small"/>
         <LoadingSpinner />
         <LoadingSpinner size="large"/> */}
+
+        {/* Cards */}
+        {/* Cards */}
       {/* <OrdersCards /> */}
       {/* <CatalogueCards /> */}
       {/* <InvoiceCards /> */}
-      <InvoiceDetailsCards />
+      {/* <InvoiceDetailsCards /> */}
+      <RetroBonuses />
+
+
     </QueryClientProvider>
   );
 }
