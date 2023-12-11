@@ -1,39 +1,41 @@
-import React from "react";
 import useOrders from "./useOrders";
-import styles from "./ordersCardsContainer.module.css";
-import baseCardStyles from "../../styles/tableRowCard.module.css";
+import {cardHeading, vendorName, cardStatus} from "./ordersCards.module.css";
 import { getColorByOrderStatus } from "../../constants/orderStatusColors";
+import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "../../styles/tableCards.module.css";
 
-const OrdersCardsContainer = () => {
+
+
+
+const OrdersCards = () => {
   const { data } = useOrders();
 
   console.log(data);
 
   return (
-    <div className={`${styles.ordersCardsContainer}`}>
+    <div className={`${cardsContainer}`}>
       {data?.map((order) => {
         return (
-          <article className={`${baseCardStyles.card}`} style={{borderLeft: `2px solid ${getColorByOrderStatus(order.status)}`}}>
-            <ul className={`${baseCardStyles.cardUl}`}>
-              <li className={`${baseCardStyles.cardLi} ${styles.cardHeading}`}>
-                <span className={`${baseCardStyles.cardLiLabel} ${styles.vendorName}`}>{order.vendor}</span>
-                <span className={`${baseCardStyles.cardLiValue}`}>{order.date}</span>
+          <article key={order.orderID} className={`${card}`} style={{borderLeft: `2px solid ${getColorByOrderStatus(order.status)}`}}>
+            <ul className={`${cardUl}`}>
+              <li className={`${cardLi} ${cardHeading}`}>
+                <span className={`${cardLiLabel} ${vendorName}`}>{order.vendor}</span>
+                <span className={`${cardLiValue}`}>{order.date}</span>
               </li>
-              <li className={`${baseCardStyles.cardLi}`}>
-                <span className={`${baseCardStyles.cardLiLabel}`}>მაღაზია</span>
-                <span className={`${baseCardStyles.cardLiValue}`}>{order.shop}</span>
+              <li className={`${cardLi}`}>
+                <span className={`${cardLiLabel}`}>მაღაზია</span>
+                <span className={`${cardLiValue}`}>{order.shop}</span>
               </li>
-              <li className={`${baseCardStyles.cardLi}`}>
-                <span className={`${baseCardStyles.cardLiLabel}`}>თანხა</span>
-                <span className={`${baseCardStyles.cardLiValue}`}>{order.amount} GEL</span>
+              <li className={`${cardLi}`}>
+                <span className={`${cardLiLabel}`}>თანხა</span>
+                <span className={`${cardLiValue}`}>{order.amount} GEL</span>
               </li>
-              <li className={`${baseCardStyles.cardLi}`}>
-                <span className={`${baseCardStyles.cardLiLabel}`}>სტატუსი</span>
-                <span className={`${baseCardStyles.cardLiValue} ${styles.cardStatus}`} style={{color: getColorByOrderStatus(order.status)}}>{order.status}</span>
+              <li className={`${cardLi}`}>
+                <span className={`${cardLiLabel}`}>სტატუსი</span>
+                <span className={`${cardLiValue} ${cardStatus}`} style={{color: getColorByOrderStatus(order.status)}}>{order.status}</span>
               </li> 
-              <li className={`${baseCardStyles.cardLi}`}>
-                <span className={`${baseCardStyles.cardLiLabel}`}>სერვისის დონე</span>
-                <span className={`${baseCardStyles.cardLiValue}`}>{order.serviceLevel ? order.serviceLevel + " %" : "უცობია" } </span>
+              <li className={`${cardLi}`}>
+                <span className={`${cardLiLabel}`}>სერვისის დონე</span>
+                <span className={`${cardLiValue}`}>{order.serviceLevel ? order.serviceLevel + " %" : "უცობია" } </span>
               </li>
             </ul>
           </article>
@@ -43,4 +45,4 @@ const OrdersCardsContainer = () => {
   );
 };
 
-export default OrdersCardsContainer;
+export default OrdersCards;
