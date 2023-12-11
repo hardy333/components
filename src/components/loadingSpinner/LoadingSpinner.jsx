@@ -7,7 +7,7 @@ const LoadingSpinner = ({color, size}) => {
   
   
   return (
-    <div className={`${styles.loadingSpinner} ${styles[size]}`} style={{borderColor: color}} ></div>
+    <div className={`${styles.loadingSpinner} ${styles[size]}`} style={{borderColor: color ? color : "#333"}} ></div>
   )
 }
 

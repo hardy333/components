@@ -13,11 +13,13 @@ import { axiosPrivate } from "./axios/axios";
 import Customers from "./newPages/customers/Customers";
 import RetroBonuses from "./newPages/retroBonuses/RetroBonuses";
 import MobileSwitch from "./components/mobileSwitch/MobileSwitch";
+import OrdersCardsContainer from "./newPages/orders/OrdersCardsContainer";
+import CatalogueCardsContainer from "./newPages/catalogue/CatalogueCardsContainer";
+import InvoiceCardsContainer from "./newPages/invoices/InvoiceCardsContainer";
 
 const queryClient = new QueryClient();
 
 function App() {
-  const [isShowing, setIsShowing] = useState(false);
 
 
   
@@ -26,11 +28,15 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
-        <button onClick={() => setIsShowing(!isShowing)}>Toggle</button>
-        {/* {isShowing ? <OrderStatusMenu /> : null} */}
-        {/* <Customers /> */}
-        <RetroBonuses />
-        <MobileSwitch />
+        {/* <LoadingSpinner size="small"/>
+        <LoadingSpinner />
+        <LoadingSpinner size="large"/> */}
+        {/* <OrdersCardsContainer /> */}
+        {/* <CatalogueCardsContainer /> */}
+        <InvoiceCardsContainer />
+    
+
+        
       </div>
     </QueryClientProvider>
   );

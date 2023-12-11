@@ -6,7 +6,6 @@ import { axiosPrivate } from "../../axios/axios";
 const queryFn = async (p) => {
     const {retailerId, vendorId} = p.queryKey[1]
     const res = await axiosPrivate.get(`RBFront/${retailerId}/${vendorId}`)
-    console.log("!!! in Query Function !!!")
     
     // const res = await axiosPrivate.get(`RBFront/${"R00001"}/${"D00002"}`)
     return res.data
