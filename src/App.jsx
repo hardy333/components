@@ -1,10 +1,10 @@
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import InvoiceDetailsCards from "./newPages/invoiceDetails/InvoiceDetailsCards";
+import InvoiceDetailsCards from "./newPages/invoiceDetails/components/InvoiceDetailsCards";
 import "./css/App.css";
-import InvoiceCards from "./newPages/invoices/InvoiceCards";
-import CatalogueCards from "./newPages/catalogue/CatalogueCards";
+import InvoiceCards from "./newPages/invoices/components/InvoiceCards";
+import CatalogueCards from "./newPages/catalogue/components/CatalogueCards";
 import OrdersCards from "./newPages/orders/OrdersCards";
 import RetroBonuses from "./newPages/retroBonuses/RetroBonuses";
 import OrderDetailCards from "./newPages/orderDetails/components/OrderDetailCards";
@@ -17,6 +17,10 @@ import { useEffect, useState } from "react";
 import Orders from "./newPages/orders/Orders";
 import OrderDetails from "./newPages/orderDetails/OrderDetails";
 import Employees from "./newPages/employees.jsx/Employees";
+import Invoices from "./newPages/invoices/Invoices";
+import InvoiceDetails from "./newPages/invoiceDetails/InvoiceDetails";
+import Catalogue from "./newPages/catalogue/Catalogue";
+import RetroBonusDetails from "./newPages/retroBonusDetails/RetroBonusDetails";
 const queryClient = new QueryClient();
 
 function App() {
@@ -44,9 +48,7 @@ function App() {
       </BaseModal>
 
       <Routes>
-        <Route path="/retro-bonuses" element={<RetroBonuses />} />
         {/* <Route path="/retro-bonuse-details" element={<RetroBonusDetails />} /> */}
-        <Route path="/customers" element={<Customers />} />
 
         <Route path="/order-cards" element={<OrdersCards />} />
         <Route path="/order-detail-cards" element={<OrderDetailCards />} />
@@ -60,10 +62,19 @@ function App() {
 
         {/* Real Pages Start*/}
         {/* Real Pages Start*/}
-
         <Route path="/order-details" element={<OrderDetails  />} />
         <Route path="/orders" element={<Orders />} />
+
         <Route path="/employees" element={<Employees />} />
+        <Route path="/customers" element={<Customers />} />
+        
+        <Route path="/invoices" element={<Invoices />} />
+        <Route path="/invoice-details" element={<InvoiceDetails />} />
+        
+        <Route path="/catalogue" element={<Catalogue />} />
+
+        <Route path="/retro-bonuses" element={<RetroBonuses />} />
+        <Route path="/retro-bonus-details" element={<RetroBonusDetails />} />
         {/* Real Pages End*/}
         {/* Real Pages End*/}
       </Routes>

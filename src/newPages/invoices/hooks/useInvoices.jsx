@@ -1,14 +1,16 @@
 import { useQuery } from '@tanstack/react-query'
-import { axiosPrivate } from '../../axios/axios'
+import { axiosPrivate } from '../../../axios/axios'
 
 const queryFn = async () => {
     const res = await axiosPrivate.get(`INVFront/R00001`)
     return res.data
 }
 
-const useInvoiceDetails = () => {
+
+
+const useInvoices = () => {
     return useQuery({
-        queryKey: ["invoice-details"],
+        queryKey: ["invoices"],
         queryFn: queryFn,
         select: (data) => {
           return data.data
@@ -16,4 +18,4 @@ const useInvoiceDetails = () => {
       });
 }
 
-export default useInvoiceDetails
+export default useInvoices

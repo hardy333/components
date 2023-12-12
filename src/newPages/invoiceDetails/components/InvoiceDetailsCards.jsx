@@ -1,6 +1,6 @@
 import React from 'react'
-import useInvoiceDetails from './useInvoiceDetails'
-import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "../../styles/tableCards.module.css";
+import useInvoiceDetails from '../hooks/useInvoiceDetails'
+import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "../../../styles/tableCards.module.css";
 
 
 const InvoiceDetailsCards = () => {

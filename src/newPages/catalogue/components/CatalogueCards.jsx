@@ -1,7 +1,7 @@
 import React from 'react'
-import useCatalogue from './useCatalogue'
+import useCatalogue from '../hooks/useCatalogue'
 import {cardHeading} from "./catalogueCards.module.css"
-import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "../../styles/tableCards.module.css";
+import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "../../../styles/tableCards.module.css";
 
 
 
