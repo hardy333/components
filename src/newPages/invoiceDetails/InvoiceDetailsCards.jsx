@@ -8,30 +8,30 @@ const InvoiceDetailsCards = () => {
     
   return (
     <div className={`${cardsContainer}`}>
-      {data?.map((invoice) => {
+      {data?.map((invoiceDetail, index) => {
         
         return (
-          <article key={invoice.invoiceID} className={`${card}`} style={{borderLeft: `2px solid red`}}>
+          <article key={invoiceDetail.invoiceID} className={`${card}`} style={{borderLeft: `2px solid red`}}>
             <ul className={`${cardUl}`}>
               <li className={`${cardLi}  `}>
-                <span className={`${cardLiLabel} `}>მაღაზია</span>
-                <span className={`${cardLiValue}`}>{invoice.shop}</span>
+                <span className={`${cardLiLabel} `}>ბარკოდი</span>
+                <span className={`${cardLiValue}`}>{invoiceDetail.barcode}</span>
               </li>
               <li className={`${cardLi}`}>
-                <span className={`${cardLiLabel}`}>მომწოდებელი</span>
-                <span className={`${cardLiValue}`}>{invoice.vendor}</span>
+                <span className={`${cardLiLabel}`}>პროდუქტი</span>
+                <span className={`${cardLiValue}`}>{invoiceDetail.product}</span>
               </li>
               <li className={`${cardLi}`}>
-                <span className={`${cardLiLabel}`}>თარიღი</span>
-                <span className={`${cardLiValue}`}>{invoice.date} </span>
+                <span className={`${cardLiLabel}`}>რაოდენობა</span>
+                <span className={`${cardLiValue}`}>{invoiceDetail.invoiceQuantity} </span>
               </li>
               <li className={`${cardLi}`}>
                 <span className={`${cardLiLabel}`}>შეკვეთის თანხა</span>    
-                <span className={`${cardLiValue} `}>{invoice.orderAmount}</span>
+                <span className={`${cardLiValue} `}>{invoiceDetail.orderAmount}</span>
               </li> 
               <li className={`${cardLi}`}>
                 <span className={`${cardLiLabel}`}>ინვოისის თანხა</span>    
-                <span className={`${cardLiValue} `}>{invoice.invoiceAmount}</span>
+                <span className={`${cardLiValue} `}>{invoiceDetail.invoiceAmount}</span>
               </li> 
             </ul>
           </article>

@@ -21,7 +21,30 @@ body{
   min-height: 100vh;
   font-family: "dejavu-sans", sans-serif;
   background-color: #f9f8fc;
-  color: #211543;
+
+  
+  /* bg */
+  /* bg */
+  --color-bg-1: #fff;
+  /* Dashboard Main content bg  */
+  --color-bg-2: #f9f8fc;
+  /* Aside Bg */
+  --color-bg-3: #1c1238;
+
+  /* Text */
+  /* Text */
+  --color-text-1: #211543;
+  /* Icons Color, skin color on light bg */
+  --color-text-2: #d0c7e8;
+
+  /* General */
+  /* General */
+  --color-primary: #6e0ff5;
+  --color-danger: #ff3360;
+  --color-warning: #ffa23c;
+  --color-success: #01c6b5;
+
+  color: var(--color-text-1);
 
 
   
