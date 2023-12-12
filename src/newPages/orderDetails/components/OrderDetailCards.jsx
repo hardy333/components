@@ -6,17 +6,14 @@ import {
   cardLi,
   cardsContainer,
 } from "../../../styles/tableCards.module.css";
-import useOrdeDetails from "../hooks/useOrdeDetails";
+import useOrderDetails from "../hooks/useOrderDetails";
 
 const OrderDetailCards = () => {
-  const { data } = useOrdeDetails();
+  const { data } = useOrderDetails();
 
   return (
     <div className={`${cardsContainer}`}>
       {data?.map((orderDetail) => {
-        console.log(orderDetail)
-        
-        
         return (
           <article
             key={orderDetail.barcode}

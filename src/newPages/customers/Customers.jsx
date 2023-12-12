@@ -10,11 +10,7 @@ const Customers = () => {
     count,
   });
 
-  console.log(customers);
 
-  useEffect(() => {
-    console.log("In Effect");
-  }, [customers]);
 
   return (
     <div>

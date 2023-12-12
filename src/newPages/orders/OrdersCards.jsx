@@ -2,6 +2,7 @@ import useOrders from "./useOrders";
 import {cardHeading, vendorName, cardStatus} from "./ordersCards.module.css";
 import { getColorByOrderStatus } from "../../constants/orderStatusColors";
 import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "../../styles/tableCards.module.css";
+import useOrderNavigate from "./hooks/useOrderNavigate";
 
 
 
@@ -9,13 +10,13 @@ import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "..
 const OrdersCards = () => {
   const { data } = useOrders();
 
-  console.log(data);
+  const {navigateToOrderDetails} = useOrderNavigate()
 
   return (
     <div className={`${cardsContainer}`}>
       {data?.map((order) => {
         return (
-          <article key={order.orderID} className={`${card}`} style={{borderLeft: `2px solid ${getColorByOrderStatus(order.status)}`}}>
+          <article onClick={() => navigateToOrderDetails(order)} key={order.orderID} className={`${card}`} style={{borderLeft: `2px solid ${getColorByOrderStatus(order.status)}`}}>
             <ul className={`${cardUl}`}>
               <li className={`${cardLi} ${cardHeading}`}>
                 <span className={`${cardLiLabel} ${vendorName}`}>{order.vendor}</span>

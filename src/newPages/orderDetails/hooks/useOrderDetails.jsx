@@ -8,7 +8,7 @@ const queryFn = async () => {
 
 
 
-const useOrdeDetails = () => {
+const useOrderDetails = () => {
     return useQuery({
         queryKey: ["order-details"],
         queryFn: queryFn,
@@ -18,4 +18,4 @@ const useOrdeDetails = () => {
       });
 }
 
-export default useOrdeDetails
+export default useOrderDetails
