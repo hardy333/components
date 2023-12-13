@@ -21,6 +21,7 @@ import Invoices from "./newPages/invoices/Invoices";
 import InvoiceDetails from "./newPages/invoiceDetails/InvoiceDetails";
 import Catalogue from "./newPages/catalogue/Catalogue";
 import RetroBonusDetails from "./newPages/retroBonusDetails/RetroBonusDetails";
+import SelectMenu from "./components/selectMenu/SelectMenu";
 const queryClient = new QueryClient();
 
 function App() {
@@ -30,11 +31,7 @@ function App() {
     setModalIsOpen(false);
   };
 
-  useEffect(() => {
 
-    console.log("Param")
-    
-  }, [])
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -78,6 +75,7 @@ function App() {
         {/* Real Pages End*/}
         {/* Real Pages End*/}
       </Routes>
+      <div style={{height: "50px"}}></div>
 
       {/* <LoadingSpinner size="small"/>
         <LoadingSpinner />
@@ -91,6 +89,8 @@ function App() {
       {/* <InvoiceDetailsCards /> */}
       {/* <RetroBonuses /> */}
       {/* <OrderDetailCards /> */}
+
+      <SelectMenu />
     </QueryClientProvider>
   );
 }

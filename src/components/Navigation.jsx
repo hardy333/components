@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navigation = () => {
   return (
     <header>
-      <ul>
+      <ul style={{display: "flex", gap: "20px"}}>
         <li>
           <Link to="/customers">customers</Link>
         </li>

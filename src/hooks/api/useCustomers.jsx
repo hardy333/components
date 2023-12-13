@@ -3,7 +3,6 @@ import { axiosPrivate } from "../../axios/axios";
 
 
 const queryFn = async () => {
-    // console.log("In customer queryFn")
     const res = await axiosPrivate.get(`AccountDataFront`)
     return res.data
 }
@@ -17,7 +16,6 @@ const useCustomers = ({ customerFilerValue}) => {
     queryKey: ["customers", customerFilerValue],
     queryFn: queryFn,
     select: (data) => {
-        // console.log("In Select", {count})
       if(customerFilerValue === "all"){
         return data.data
       }else if(customerFilerValue === "vendors"){

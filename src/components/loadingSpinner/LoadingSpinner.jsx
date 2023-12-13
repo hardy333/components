@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "./loadingSpinner.module.css"
 
 
-
 const LoadingSpinner = ({color, size}) => {
   
   

@@ -6,6 +6,7 @@ import useRenderCount from "../../hooks/useRenderCount";
 // css
 import "./retro-bonuses.css";
 import RetroBonusCard from "./components/RetroBonusCard";
+import SelectMenu from "../../components/selectMenu/SelectMenu";
 
 const RetroBonuses = () => {
   const [retailerId, setRetailerId] = useState("R00001");
@@ -13,7 +14,9 @@ const RetroBonuses = () => {
 
   const [selectedCustomer, setSelectedCustomer] = useState(null);
 
-  const { data: customers } = useCustomers({ customerFilerValue: "vendors" });
+  const { data: customers, isLoading: customersIsLoading } = useCustomers({
+    customerFilerValue: "vendors",
+  });
   const { data: retroBonuses } = useRetroBonuses({
     retailerId: retailerId,
     vendorId: selectedCustomer?.accountID,
@@ -21,19 +24,35 @@ const RetroBonuses = () => {
 
   useEffect(() => {
     if (!customers) return;
-    setSelectedCustomer(customers[1]);
+    const { name, customerID } = customers[1];
+    setSelectedCustomer({ value: name, label: name, customerID });
   }, [customers]);
 
   const renderCount = useRenderCount();
   const [count, setCount] = useState(0);
 
+  console.log({ selectedCustomer });
+
   return (
     <section>
-      <header></header>
+      <header>
+        <SelectMenu
+          isLoading={customersIsLoading}
+          selectedMenuOption={selectedCustomer}
+          setSelectedMenuOption={setSelectedCustomer}
+          options={
+            customers
+              ? customers.map((obj) => ({
+                  label: obj.name,
+                  value: obj.name,
+                  accountID: obj.accountID,
+                }))
+              : []
+          }
+        />
+      </header>
       <section className="retro-bonus-cards-container">
         {retroBonuses?.map((retroBonus) => {
-          console.log("sss", retroBonus.retroBonusID);
-
           return (
             <RetroBonusCard
               retroBonus={retroBonus}

@@ -18,7 +18,6 @@ const useRetroBonuses = ({retailerId, vendorId}) => {
     queryKey: ["retro-bonuses", {retailerId, vendorId}],
     queryFn: queryFn,
     select: (data) => {
-        console.log("Select")
       return data.data
     },
     enabled: Boolean(retailerId && vendorId)

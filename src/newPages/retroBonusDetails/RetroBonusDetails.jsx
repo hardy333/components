@@ -4,7 +4,7 @@ import RetroBonusDetailCards from "./components/RetroBonusDetailCards";
 const RetroBonusDetails = () => {
   return (
     <div>
-      <h1>RetroBonusDetails</h1>
+      <h1  style={{textAlign: "center"}}>RetroBonusDetails</h1>
       <RetroBonusDetailCards />
     </div>
   );

@@ -1,0 +1,218 @@
+/* Sizes ------------------------- Sizes */
+/* Sizes ------------------------- Sizes */
+/* .marlin-select--size-normal.marlin-select {
+  width: 200px;
+  font-size: 16px !important;
+}
+
+.marlin-select--size-normal .marlin-select__control {
+  height: 36px;
+  min-height: 36px !important;
+}
+
+.marlin-select--size-normal .marlin-select__value-container {
+  height: 36px !important;
+}
+
+.marlin-select--size-normal .marlin-select__indicators{
+  height: 36px !important;
+
+
+} */
+
+
+/*
+ სულ გარეთა მშობელი, ვიზუალურად არაფერი არ აქვს,
+ არც ბორდერ, არც პადინგი, მარტო სიგანეს აკონტროლებს.
+ შეუძლია: width, font-size.
+ */
+
+.marlin-select {
+    --select-width: 200px;
+    --select-height: 36px;
+    --select-font-size: 16px;
+
+    
+    
+  width: var(--select-width);
+  cursor: pointer !important;
+
+  font-size: var(--select-font-size);
+
+  color: #2a1f4b !important;
+}
+
+.marlin-select--size-small.marlin-select {
+    --select-width: 180px;
+    --select-height: 30px;
+    --select-font-size: 14px;
+    
+
+}
+
+
+.marlin-select__control {
+  border-radius: 15px !important;
+  height: var(--select-height);
+  min-height: var(--select-height) !important;
+  cursor: pointer !important;
+  border-color: white !important;
+  /* display: block !important; */
+  /* background-color: pink !important; */
+}
+
+.marlin-select__control :hover {
+}
+
+.marlin-select__control--is-focused {
+  box-shadow: none !important;
+  border-color: #6e0ff5 !important;
+}
+
+.marlin-select__control--menu-is-open {
+  /* box-shadow: 0px 0px 0px 1px #bb86fc !important; */
+  box-shadow: none !important;
+  border-color: #6e0ff5 !important;
+}
+
+/* Left ----------------------------------------- Left */
+/* Left ----------------------------------------- Left */
+
+/* Left Parent */
+.marlin-select__value-container {
+  /* background-color: green; */
+  height: var(--select-height);
+  transform: translate(0, 0px);
+
+  /* background-color: red; */
+}
+
+.marlin-select__value-container--has-value {
+}
+
+/*  Child 1 */
+.marlin-select__single-value {
+  /* background-color: yellow; */
+  color: #2a1f4b !important;
+}
+
+/*  Child 2 */
+.marlin-select__input-container {
+  /* background-color: pink; */
+}
+
+.marlin-select__input {
+  /* background-color: blue; */
+  /* color: blue !important; */
+  color: #2a1f4b !important;
+  font-size: var(--select-font-size) !important;
+}
+
+/* Right ----------------------------------------- Right */
+/* Right ----------------------------------------- Right */
+
+/* Right Parent */
+.marlin-select__indicators {
+  /* background-color: yellow; */
+  height: var(--select-height) !important;
+}
+
+/*  Child 1 */
+.marlin-select__indicator-separator {
+  display: none;
+}
+
+/*  child 2 */
+.marlin-select__indicator {
+}
+
+.marlin-select__indicator svg {
+  transition: transform 0.2s ease;
+  fill: #d0c7e8;
+}
+
+.marlin-select__control--menu-is-open .marlin-select__indicator svg {
+  transform: rotate(-180deg);
+}
+
+/* Dropdown ------------------------------- Dropdown */
+/* Dropdown ------------------------------- Dropdown */
+
+.marlin-select__menu {
+  border-radius: 8px !important;
+
+  z-index: 999999999999999999999 !important;
+  /* overflow: hidden !important; */
+
+  padding: 5px 0px;
+  padding-right: 2px;
+  background-color: white !important;
+  box-shadow: none !important;
+  box-shadow: 0px 1px 3px 1px rgba(208, 199, 232, 0.25) !important;
+}
+
+.marlin-select__menu > div {
+}
+
+.marlin-select__menu-list {
+  scrollbar-width: thin;
+  /* scrollbar-color: orange lightyellow; */
+  /* background-color: red !important; */
+  border-radius: 5px !important;
+}
+
+.marlin-select__option {
+  font-size: var(--select-font-size);
+  font-weight: 400;
+  color: #211543;
+  padding-inline: 0;
+  cursor: pointer !important;
+  position: relative;
+  /* border: 1px solid red; */
+  /* padding: 5px !important; */
+}
+
+.react-select__option:last-child {
+  /* border-bottom: none; */
+}
+
+.marlin-select__option--is-focused {
+  background-color: transparent !important;
+  background-color: #f9f8fc !important;
+  color: rgb(110, 15, 245) !important;
+}
+
+.marlin-select__option--is-selected {
+  /* background-color: red !important; */
+  background-color: transparent !important;
+  background-color: #f9f8fc !important;
+
+  color: rgb(110, 15, 245) !important;
+}
+
+/* Icon */
+/* Icon */
+
+.marlin-select-icon-span {
+  padding-left: 10px;
+}
+
+/* Dropdown scrollbar ------------------------- Dropdown scrollbar*/
+/* Dropdown scrollbar ------------------------- Dropdown scrollbar*/
+
+::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(55, 55, 55, 0.3); */
+  background-color: #e3e3e3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #ad9dbb;
+}
