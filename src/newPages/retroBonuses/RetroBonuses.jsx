@@ -9,27 +9,25 @@ import RetroBonusCard from "./components/RetroBonusCard";
 import SelectMenu from "../../components/selectMenu/SelectMenu";
 
 const RetroBonuses = () => {
-  const [retailerId, setRetailerId] = useState("R00001");
-  const [vendorId, setVendorId] = useState("D00002");
 
   const [selectedCustomer, setSelectedCustomer] = useState(null);
 
   const { data: customers, isLoading: customersIsLoading } = useCustomers({
     customerFilerValue: "vendors",
   });
+
   const { data: retroBonuses } = useRetroBonuses({
-    retailerId: retailerId,
-    vendorId: selectedCustomer?.accountID,
+    retailerId: "R00001",
+    vendorId: selectedCustomer?.customerID,
   });
 
   useEffect(() => {
     if (!customers) return;
-    const { name, customerID } = customers[1];
-    setSelectedCustomer({ value: name, label: name, customerID });
+    const { name, accountID } = customers[1];
+    setSelectedCustomer({ value: name, label: name, customerID:accountID  });
   }, [customers]);
 
-  const renderCount = useRenderCount();
-  const [count, setCount] = useState(0);
+
 
   console.log({ selectedCustomer });
 

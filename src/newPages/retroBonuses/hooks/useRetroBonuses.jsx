@@ -14,6 +14,7 @@ const queryFn = async (p) => {
 
 
 const useRetroBonuses = ({retailerId, vendorId}) => {
+  
   return useQuery({
     queryKey: ["retro-bonuses", {retailerId, vendorId}],
     queryFn: queryFn,
