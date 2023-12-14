@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from "react";
 import useCustomers from "../../hooks/api/useCustomers";
 import "./customers.css";
+import CustomerCard from "./components/CustomerCard";
 
 const Customers = () => {
-  const [count, setCount] = useState(0);
   const { data: customers } = useCustomers({
     queryKey: "customers",
     customerFilerValue: "retailers",
-    count,
   });
+
 
 
 
   return (
     <div>
-      Customers
-      <button onClick={() => setCount(count + 1)}>{count}</button>
-      <div className="text-123">Lorem ipsum dolor sit amet.</div>
+      <h2>customers</h2>
+      <section className="vendors-card-container">
+        {
+          customers?.map(customer => {
+
+            return (
+              <CustomerCard  key={customer.accountID} productsCount={customer.productsCount} customerName={customer.name} />
+            )
+          })
+        }
+      </section>
+      
     </div>
   );
 };

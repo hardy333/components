@@ -15,6 +15,8 @@ export const getColorByOrderStatus = (status) => {
         color = "#FF7BA7";
       } else if (status === "გასაგზავნია") {
         color = "#f55364";
+      }else if (status === "რეალიზებულია"){
+        color = "#01c6b5";
       }
 
       return color;

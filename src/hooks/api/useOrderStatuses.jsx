@@ -4,29 +4,28 @@ import { axiosPrivate } from "../../axios/axios";
 const defaultOrderId = "37480a56-df52-4688-ae45-5af19d98d322";
 
 const queryFn = async ({queryKey}) => {
-    console.log(queryKey)
     const res = await axiosPrivate.get(`StatusResultFront/${queryKey[1]}`)
+
+    // if(!Array.isArray(res.data)){
+    //   throw new Error("Something went wrong 123")
+
+    // }
     return res.data
 }
 
-// const x = queryFn().then(y => console.log({y}))
-// console.log({x})
 
-const useOrderStatuses = (orderId = defaultOrderId) => {
+
+const useOrderStatuses = (orderID = defaultOrderId) => {
   return useQuery({
-    queryKey: ["order-statuses", orderId],
-    queryFn: () => {
-      return axiosPrivate.get(`StatusResultFront/${orderId}`).then((res) => {
-        return res.data
-      });
+    queryKey: ["order-statuses", orderID],
+    queryFn: queryFn,
+    select: (data) => {
+      console.log("select");
+      return data;
     },
-    // queryFn: queryFn,
-    // select: (data) => {
-    //   console.log("select");
-    //   return data;
-    // },
-    refetchOnWindowFocus: true,
-    staleTime: 0,
+    enabled: false,
+    retry: 1
+ 
   });
 };
 

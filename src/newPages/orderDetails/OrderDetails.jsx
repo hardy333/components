@@ -1,3 +1,5 @@
+import { getColorByOrderStatus } from "../../constants/orderStatusColors";
+import OrderStatusMenu from "../retroBonusDetails/components/orderStatusMenu/OrderStatusMenu";
 import OrderDetailCards from "./components/OrderDetailCards";
 import useGetOrderDetailsFromURL from "./hooks/useGetOrderDetailsFromURL";
 
@@ -14,17 +16,15 @@ const OrderDetails = () => {
     orderNumber,
   } = useGetOrderDetailsFromURL();
 
+  console.log("-----", orderID)
 
 
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Order Details</h1>
-      <button
-      
-      >
-        navigate
-      </button>
-      <OrderDetailCards />
+      <p>{orderID}</p>
+      <OrderStatusMenu  orderID={orderID} statusColor={getColorByOrderStatus(status)}/>
+      <OrderDetailCards statusColor={getColorByOrderStatus(status)} />
     </div>
   );
 };

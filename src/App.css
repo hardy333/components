@@ -54,6 +54,8 @@ body{
 
 a, ul, li, span, button{
   font-family: "dejavu-sans", sans-serif;
+  color: var(--color-text-1);
+
 
 }
 

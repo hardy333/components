@@ -1,4 +1,6 @@
 import "./App.css";
+
+import 'tippy.js/dist/tippy.css'; // optional
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import InvoiceDetailsCards from "./newPages/invoiceDetails/components/InvoiceDetailsCards";
@@ -22,6 +24,7 @@ import InvoiceDetails from "./newPages/invoiceDetails/InvoiceDetails";
 import Catalogue from "./newPages/catalogue/Catalogue";
 import RetroBonusDetails from "./newPages/retroBonusDetails/RetroBonusDetails";
 import SelectMenu from "./components/selectMenu/SelectMenu";
+import OrderStatusMenu from "./newPages/retroBonusDetails/components/orderStatusMenu/OrderStatusMenu";
 const queryClient = new QueryClient();
 
 function App() {
@@ -75,7 +78,10 @@ function App() {
         {/* Real Pages End*/}
         {/* Real Pages End*/}
       </Routes>
-      <div style={{height: "50px"}}></div>
+      {/* <OrderStatusMenu /> */}
+      
+      
+      <div style={{height: "50px"}}></div>  
 
       {/* <LoadingSpinner size="small"/>
         <LoadingSpinner />
@@ -90,7 +96,7 @@ function App() {
       {/* <RetroBonuses /> */}
       {/* <OrderDetailCards /> */}
 
-      <SelectMenu />
+      {/* <SelectMenu /> */}
     </QueryClientProvider>
   );
 }

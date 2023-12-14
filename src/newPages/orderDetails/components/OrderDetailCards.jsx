@@ -8,7 +8,7 @@ import {
 } from "../../../styles/tableCards.module.css";
 import useOrderDetails from "../hooks/useOrderDetails";
 
-const OrderDetailCards = () => {
+const OrderDetailCards = ({statusColor}) => {
   const { data } = useOrderDetails();
 
   return (
@@ -18,7 +18,7 @@ const OrderDetailCards = () => {
           <article
             key={orderDetail.barcode}
             className={`${card}`}
-            style={{ borderLeft: `2px solid red` }}
+            style={{ borderLeft: `2px solid ${statusColor || "#6E0FF5"}` }}
           >
             <ul className={`${cardUl}`}>
               <li className={`${cardLi}`}>

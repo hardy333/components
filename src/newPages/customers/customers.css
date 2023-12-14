@@ -1,7 +1,275 @@
-.text-123 {
-  max-width: 120px;
 
-  text-wrap: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+.vendors-card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  /* grid-auto-rows: 150px; */
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  /* height: 400px; */
+  /* overflow-y: auto; */
+  padding: 3rem;
+  padding-right: 0px ;
+  padding-top: 0;
+
+  flex-grow: 1;
+  padding-left: 0;
+  padding-bottom: 1rem;
+
+
+}
+
+.vendor-card{
+  background-color: #fff;
+  /* padding: 15px 15px; */
+  padding-block: 15px;
+  border-left: 4px solid transparent;
+  border-radius: 5px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow:0px 3px 5px rgba(208, 199, 232, 0.09) ;
+  --color-disabled: #D0C7E8;
+  --color-active:  #6E0FF5;
+  align-self: start;
+
+}
+
+
+.vendor-card svg{
+  width: 35px;
+
+}
+
+
+.vendor-card-top{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 15px;
+
+
+}
+
+.vendor-card-name{
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.vendor-card-name h3{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 31px;
+  color: var(--color-active);
+  line-height: 1;
+
+}
+
+.vendor-card.disabled h3{
+  color: var(--color-disabled);
+}
+
+
+.vendor-card-products{
+
+  margin-top: 2rem;
+  margin-bottom: 2.2rem;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #1A1F3D;
+
+}
+
+.vendor-card.active{
+  border-left-color: var(--color-active);
+}
+
+.vendor-card.disabled{
+  border-left-color: var(--color-disabled);
+
+}
+
+.vendor-card-footer{
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+  padding-inline: 10px;
+  padding-right: 2rem;
+}
+
+.vendor-card-footer--disabled{
+  justify-content: space-between !important;
+}
+
+.vendor-card-footer .btn-link{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1A1F3D;
+  padding: 0;
+}
+
+.vendor-card__btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  
+
+}
+
+.vendor-card__btn svg{
+}
+
+.vendor-card-hr{
+  width: 1px;
+  height: 1rem;
+  background-color: var(--color-active);
+  flex-grow: 0;
+}
+
+.vendor-card-footer .btn-purple{
+  padding: 0;
+  background-color: #AE9EDC;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 5px 8px;
+
+}
+
+.vendor-card-footer .btn-purple:hover{
+  filter: brightness(110%);
+
+}
+
+.vendor-card-footer svg{
+  width: 18px;
+  height: 18px;
+}
+
+.vendor-card-footer svg:hover rect{
+  fill: #6E0FF5;
+  stroke: #6E0FF5 !important;
+}
+
+.vendors-calendar-svg .cls-1{
+  fill:none;
+  stroke:#1a1f3d;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width:5.69px;
+
+}
+
+.vendors-shop-svg .cls-1{
+  fill:none;
+  stroke:#1a1f3d;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width:4.65px;
+}
+
+.vendors-calendar-svg .cls-2{
+  fill:#1a1f3d;
+
+}
+
+.vendor-card-footer svg:hover .cls-1{
+  stroke: #6E0FF5;
+}
+
+/* @media (max-width: 1200px) {
+  .vendors-card-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+}
+
+@media (max-width: 1000px) {
+  .vendors-card-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+
+@media (max-width: 650px) {
+  .vendors-card-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+} */
+
+.tooltip-1{
+  background-color: #1c1238 !important;
+  border-radius: 15px !important;
+  padding-inline: 0.5rem;
+  color: #fff;
+}
+
+
+
+@media (max-width: 600px) {
+  .vendors-header{
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+  }
+
+  .vendors-switch-container p{
+    font-size: 16px;
+  }
+
+
+  .vendors-card-container{
+    padding-right: 5px;
+  
+  }
+
+  .vendor-card{
+    max-width: 100% !important;
+    width: 300px;
+    justify-self: center;
+  }
+
+  .vendors .ms-auto{
+    margin-right: auto !important;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .vendors-switch-container p{
+    font-size: 14px;
+  }
+
+
+}
+
+@media (max-width: 340px) {
+  .vendors-switch-container p{
+    text-align: center;
+    text-align: center !important;
+  }
+
+  .vendors-switch-container p:first-child{
+    text-align: start;
+  }
+
+  .vendors-switch-container p:last-child{
+    text-align: end;
+  }
+
+
+  
 }

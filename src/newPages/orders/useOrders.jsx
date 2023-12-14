@@ -1,9 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
 import { axiosPrivate } from '../../axios/axios'
 
 const queryFn = async () => {
-    const res = await axiosPrivate.get(`RetailOrdersByAccountFront/R00001`)
+    const res = await axiosPrivate.get(`SupplierOrdersByAccount/D00003`)
     return res.data
 }
 
