@@ -14,6 +14,8 @@ const RetroBonusDetails = () => {
     customer,
   } = useGetRetroBonusDetailsFromURL();
 
+  
+
   console.log({
     retroBonusID,
     documentNo,
