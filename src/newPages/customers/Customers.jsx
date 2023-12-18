@@ -18,7 +18,6 @@ const Customers = () => {
       <section className="vendors-card-container">
         {
           customers?.map(customer => {
-
             return (
               <CustomerCard  key={customer.accountID} productsCount={customer.productsCount} customerName={customer.name} />
             )

@@ -3,8 +3,8 @@ import { btn, menuUl, btnOpen } from "./orderStatusMenu.module.css";
 import OrderStatusMenuArrow from "./OrderStatusMenuArrow";
 import { Menu, MenuItem } from "@szhsin/react-menu";
 // import '@szhsin/react-menu/dist/index.css';
-import LoadingSpinner from "../../../../components/loadingSpinner/LoadingSpinner";
-import useOrderStatuses from "../../../../hooks/api/useOrderStatuses";
+import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
+import useOrderStatuses from "../../hooks/api/useOrderStatuses";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -41,7 +41,7 @@ const OrderStatusMenu = ({ statusColor, orderID }) => {
               color: statusColor,
               backgroundColor: statusColor + "25",
               "--status-color": statusColor,
-              marginInline: "auto"
+              marginInline: "auto",
             }}
             onClick={() => refetch()}
           >
@@ -60,20 +60,31 @@ const OrderStatusMenu = ({ statusColor, orderID }) => {
           exit={{ opacity: 0 }}
           key={menuStateName}
         >
-          {renderMenuContent(menuStateName, statusColor)}
+          {renderMenuContent(menuStateName, statusColor, data)}
         </motion.div>
       </AnimatePresence>
     </Menu>
   );
 };
 
-const renderMenuContent = (menuStateName, statusColor) => {
+const renderMenuContent = (menuStateName, statusColor, data) => {
   if (menuStateName === WAITING) {
     return <LoadingSpinner color={statusColor} />;
   }
 
   if (menuStateName === SUCCESS) {
-    return <p>HEllo HEllo HELLO</p>;
+    return (
+      <>
+        {data?.map((status) => {
+          return (
+            <li>
+              <span>{status.date}</span>
+              <span>{status.statusName}</span>
+            </li>
+          );
+        })}
+      </>
+    );
   }
 
   if (menuStateName === ERROR) {

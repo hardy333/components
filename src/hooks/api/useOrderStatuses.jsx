@@ -5,12 +5,14 @@ const defaultOrderId = "37480a56-df52-4688-ae45-5af19d98d322";
 
 const queryFn = async ({queryKey}) => {
     const res = await axiosPrivate.get(`StatusResultFront/${queryKey[1]}`)
+    console.log(res)
+    
 
-    if(!Array.isArray(res.data)){
+    if(!Array.isArray(res?.data?.data)){
       throw new Error("Something went wrong 123")
 
     }
-    return res.data
+    return res.data.data
 }
 
 

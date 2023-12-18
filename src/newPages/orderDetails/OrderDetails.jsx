@@ -1,5 +1,5 @@
 import { getColorByOrderStatus } from "../../constants/orderStatusColors";
-import OrderStatusMenu from "../retroBonusDetails/components/orderStatusMenu/OrderStatusMenu";
+import OrderStatusMenu from "../../components/orderStatusMenu/OrderStatusMenu";
 import OrderDetailCards from "./components/OrderDetailCards";
 import useGetOrderDetailsFromURL from "./hooks/useGetOrderDetailsFromURL";
 

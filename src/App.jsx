@@ -24,7 +24,7 @@ import InvoiceDetails from "./newPages/invoiceDetails/InvoiceDetails";
 import Catalogue from "./newPages/catalogue/Catalogue";
 import RetroBonusDetails from "./newPages/retroBonusDetails/RetroBonusDetails";
 import SelectMenu from "./components/selectMenu/SelectMenu";
-import OrderStatusMenu from "./newPages/retroBonusDetails/components/orderStatusMenu/OrderStatusMenu";
+import OrderStatusMenu from "./components/orderStatusMenu/OrderStatusMenu";
 const queryClient = new QueryClient();
 
 function App() {
