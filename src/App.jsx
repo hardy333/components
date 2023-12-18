@@ -18,13 +18,13 @@ import BaseModal from "./components/baseModal/BaseModal";
 import { useEffect, useState } from "react";
 import Orders from "./newPages/orders/Orders";
 import OrderDetails from "./newPages/orderDetails/OrderDetails";
-import Employees from "./newPages/employees.jsx/Employees";
 import Invoices from "./newPages/invoices/Invoices";
 import InvoiceDetails from "./newPages/invoiceDetails/InvoiceDetails";
 import Catalogue from "./newPages/catalogue/Catalogue";
 import RetroBonusDetails from "./newPages/retroBonusDetails/RetroBonusDetails";
 import SelectMenu from "./components/selectMenu/SelectMenu";
 import OrderStatusMenu from "./components/orderStatusMenu/OrderStatusMenu";
+import Employees from "./newPages/employees/Employees";
 const queryClient = new QueryClient();
 
 function App() {

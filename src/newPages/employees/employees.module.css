@@ -1,0 +1,17 @@
+.employeesContainer{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: max-content;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  height: 400px;
+  padding: 3rem;
+  /* padding right should be less than padding-left becouse of scrollbar, which takes space */
+  padding-top: 2rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding-left: 0;
+  padding-right: 0;
+  overflow-x: visible !important;
+  padding-bottom: 1rem;
+}

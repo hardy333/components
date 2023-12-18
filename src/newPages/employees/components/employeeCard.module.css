@@ -1,0 +1,111 @@
+.employee-card {
+  background: #ffffff;
+  box-shadow: 0px 3px 5px rgba(208, 199, 232, 0.05);
+  border-radius: 15px;
+  padding: 2rem 2rem;
+  padding-bottom: 2.2rem;
+  position: relative;
+}
+
+.employee-card__img-container {
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  --size: 6.5rem;
+  width: 35px;
+  height: 35px;
+}
+
+.employee-card__dots-btn {
+  position: absolute;
+  right: 0.4rem;
+  top: 1.8rem;
+
+  height: 25px;
+  width: 25px;
+
+  background-color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.employee-card__dots-btn:hover {
+  background-color: hsla(256, 42%, 85%, 0.082);
+}
+
+.employee-card__dots-btn.open {
+  background-color: hsla(256, 42%, 65%, 0.08);
+}
+
+.employee-card__dots-btn svg {
+  flex-shrink: 0;
+  height: 15px;
+}
+
+.employee-card h2 {
+  font-weight: 700;
+  font-size: 14px;
+  color: #211543;
+  text-align: center;
+}
+
+.employee-card h3 {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 22px;
+  /* identical to box height */
+  text-align: center;
+  color: #d0c7e8;
+  margin-bottom: 1.8rem;
+}
+
+.employee-card h4 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 22px;
+  /* identical to box height */
+  margin-bottom: 0.4rem;
+  color: #ffa23c;
+}
+
+.employee-card ul {
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.employee-card ul li {
+  color: #211543;
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #211543;
+}
+
+.employee-card .btn {
+  color: var(--color-text-2);
+  font-size: 12px;
+  font-weight: 700;
+  margin: auto;
+  transition: all 0.2s ease;
+  border: 1px solid #6e0ff5;
+  background-color: transparent;
+}
+
+.employee-card .btn:hover {
+  background-color: #6e0ff5;
+  color: #fff;
+}

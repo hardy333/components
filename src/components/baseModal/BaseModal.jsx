@@ -14,12 +14,6 @@ const BaseModal = ({ modalIsOpen, closeModal, children }) => {
     >
       <>
         {children}
-        <div>
-          <h2>Lorem, ipsum dolor.</h2>
-          <h2>Lorem, ipsum dolor.</h2>
-          <h2>Lorem, ipsum dolor.</h2>
-          <h2>Lorem, ipsum dolor.</h2>
-        </div>
       </>
     </Modal>
   );
