@@ -13,7 +13,7 @@ const OrderStatusMenu = ({ statusName, orderID }) => {
   if (data && data?.length > 0) {
     menuContent = (
       <>
-        {data?.reverse()?.map((status) => {
+        {[...data]?.reverse()?.map((status) => {
           return (
             <li className={`${contentLi}`} key={status.id}>
               <span>{status.statusName},</span>
