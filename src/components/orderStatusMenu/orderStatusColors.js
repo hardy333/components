@@ -1,7 +1,3 @@
-const orderStatusColors = {
-    
-}
-
 export const getColorByOrderStatus = (status) => {
     let color = "#211543";
     

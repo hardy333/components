@@ -5,13 +5,13 @@ const defaultOrderId = "37480a56-df52-4688-ae45-5af19d98d322";
 
 const queryFn = async ({queryKey}) => {
     const res = await axiosPrivate.get(`StatusResultFront/${queryKey[1]}`)
-    console.log(res)
     
 
     if(!Array.isArray(res?.data?.data)){
-      throw new Error("Something went wrong 123")
+      throw new Error("Something went wrong.")
 
-    }
+    } 
+    // throw "Hello"
     return res.data.data
 }
 
@@ -22,7 +22,6 @@ const useOrderStatuses = (orderID = defaultOrderId) => {
     queryKey: ["order-statuses", orderID],
     queryFn: queryFn,
     select: (data) => {
-      console.log("select");
       return data;
     },
     enabled: false,

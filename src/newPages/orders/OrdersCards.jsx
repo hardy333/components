@@ -1,6 +1,6 @@
 import useOrders from "./useOrders";
 import {cardHeading, vendorName, cardStatus} from "./ordersCards.module.css";
-import { getColorByOrderStatus } from "../../constants/orderStatusColors";
+import { getColorByOrderStatus } from "../../components/orderStatusMenu/orderStatusColors";
 import {card, cardUl, cardLiLabel, cardLiValue, cardLi, cardsContainer} from "../../styles/tableCards.module.css";
 import useOrderNavigate from "./hooks/useOrderNavigate";
 

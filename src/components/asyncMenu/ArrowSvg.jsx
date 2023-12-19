@@ -1,6 +1,6 @@
 import React from "react";
 
-const OrderStatusMenuArrow = ({fill}) => {
+const ArrowSvg = ({fill}) => {
   return (
     <svg
       width="20"
@@ -13,4 +13,4 @@ const OrderStatusMenuArrow = ({fill}) => {
   );
 };
 
-export default OrderStatusMenuArrow;
+export default ArrowSvg;

@@ -28,14 +28,14 @@ const Employees = () => {
 
       <BaseModal closeModal={closeModal} modalIsOpen={modalIsOpen}>
         <>
-            <ul>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-            </ul>
+          <ul>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+          </ul>
 
-            <button onClick={closeModal}>Close Modal</button>
+          <button onClick={closeModal}>Close Modal</button>
         </>
       </BaseModal>
     </>
