@@ -1,7 +1,9 @@
-import Modal from "react-modal";
 import "./modal.css";
+import { ReactNode } from "react";
+import Modal from 'react-modal';
 
 const BaseModal = ({ modalIsOpen, closeModal, children }) => {
+
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -16,7 +18,7 @@ const BaseModal = ({ modalIsOpen, closeModal, children }) => {
         {children}
       </>
     </Modal>
-  );
+);
 };
 
 export default BaseModal;

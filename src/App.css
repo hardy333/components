@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: "novaSquare";
   src: url(./styles/fonts/NovaSquare-Regular.ttf);
-}
+} */
 
 @font-face {
   font-family: "dejavu-sans";
@@ -14,31 +14,36 @@
   box-sizing: border-box;
 }
 
-
+html{
+  font-size: 62.5%;
+  
+}
 
 
 body{
   min-height: 150vh;
-  font-family: "dejavu-sans", sans-serif;
-  background-color: #f9f8fc;
+  font-family: sans-serif, "dejavu-sans";
 
+  background-color: #d1c6f3;
+  font-size: 1.6rem;
   
-  /* bg */
-  /* bg */
+  /* Background Colors --------------------------- Background Colors */
+  /* Background Colors --------------------------- Background Colors */
   --color-bg-1: #fff;
   /* Dashboard Main content bg  */
   --color-bg-2: #f9f8fc;
   /* Aside Bg */
   --color-bg-3: #1c1238;
 
-  /* Text */
-  /* Text */
+  /* Text Colors ---------------------------------- Text Colors */
+  /* Text Colors ---------------------------------- Text Colors */
   --color-text-1: #211543;
   /* Icons Color, skin color on light bg */
   --color-text-2: #d0c7e8;
 
-  /* General */
-  /* General */
+
+  /* General Colors ------------------------------------------- General Colors */
+  /* General Colors ------------------------------------------- General Colors */
   --color-primary: #6e0ff5;
   --color-danger: #ff3360;
   --color-warning: #ffa23c;
@@ -47,13 +52,11 @@ body{
   color: var(--color-text-1);
 
 
-  
-
 }
 
 
-a, ul, li, span, button{
-  font-family: "dejavu-sans", sans-serif;
+a, ul, li, span, button, select, input, textarea{
+  font-family: sans-serif, "dejavu-sans";
   color: var(--color-text-1);
 
 
@@ -65,3 +68,8 @@ a, ul, li, span, button{
 
 
 
+
+/* .szh-menu{
+  padding: 0px !important;
+  justify-content: stretch !important;
+} */

@@ -7,6 +7,9 @@ import useRenderCount from "../../hooks/useRenderCount";
 import "./retro-bonuses.css";
 import RetroBonusCard from "./components/RetroBonusCard";
 import SelectMenu from "../../components/selectMenu/SelectMenu";
+import RetroBonusConditionsMenu from "../../components/retroBonusConditionsMenu/RetroBonusConditionsMenu";
+
+import ArrowSvg from "./ArrowSvg";
 
 const RetroBonuses = () => {
 
@@ -29,15 +32,17 @@ const RetroBonuses = () => {
 
 
 
-  console.log({ selectedCustomer });
 
   return (
     <section>
       <header>
+        <RetroBonusConditionsMenu />
+
         <SelectMenu
           isLoading={customersIsLoading}
           selectedMenuOption={selectedCustomer}
           setSelectedMenuOption={setSelectedCustomer}
+          Icon={ArrowSvg}
           options={
             customers
               ? customers.map((obj) => ({

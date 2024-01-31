@@ -40,6 +40,9 @@
   font-size: var(--select-font-size);
 
   color: #2a1f4b !important;
+
+  /* width: 150px; */
+  max-width: 100% ;
 }
 
 .marlin-select--size-small.marlin-select {
@@ -59,6 +62,8 @@
   border-color: white !important;
   /* display: block !important; */
   /* background-color: pink !important; */
+
+  
 }
 
 .marlin-select__control :hover {
@@ -94,6 +99,8 @@
 .marlin-select__single-value {
   /* background-color: yellow; */
   color: #2a1f4b !important;
+  font-size: var(--select-font-size) !important;
+
 }
 
 /*  Child 2 */
@@ -149,6 +156,8 @@
   background-color: white !important;
   box-shadow: none !important;
   box-shadow: 0px 1px 3px 1px rgba(208, 199, 232, 0.25) !important;
+
+  font-size: 14px !important;
 }
 
 .marlin-select__menu > div {
@@ -162,7 +171,7 @@
 }
 
 .marlin-select__option {
-  font-size: var(--select-font-size);
+  font-size: 14px !important;
   font-weight: 400;
   color: #211543;
   padding-inline: 0;

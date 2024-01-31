@@ -4,7 +4,6 @@ import 'tippy.js/dist/tippy.css'; // optional
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import InvoiceDetailsCards from "./newPages/invoiceDetails/components/InvoiceDetailsCards";
-import "./css/App.css";
 import InvoiceCards from "./newPages/invoices/components/InvoiceCards";
 import CatalogueCards from "./newPages/catalogue/components/CatalogueCards";
 import OrdersCards from "./newPages/orders/OrdersCards";
@@ -24,6 +23,8 @@ import Catalogue from "./newPages/catalogue/Catalogue";
 import RetroBonusDetails from "./newPages/retroBonusDetails/RetroBonusDetails";
 import SelectMenu from "./components/selectMenu/SelectMenu";
 import Employees from "./newPages/employees/Employees";
+import { Menu, MenuItem } from "@szhsin/react-menu";
+import Test from "./newPages/Test";
 const queryClient = new QueryClient();
 
 function App() {
@@ -38,16 +39,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Navigation />
-
-      <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
-      <BaseModal modalIsOpen={modalIsOpen} closeModal={closeModal}>
-        <ul>
-          <li>Hello</li>
-        </ul>
-      </BaseModal>
+     
 
       <Routes>
         {/* <Route path="/retro-bonuse-details" element={<RetroBonusDetails />} /> */}
+        <Route path="test" element={<Test />}/>
 
         <Route path="/order-cards" element={<OrdersCards />} />
         <Route path="/order-detail-cards" element={<OrderDetailCards />} />
@@ -80,7 +76,6 @@ function App() {
       {/* <OrderStatusMenu /> */}
       
       
-      <div style={{height: "50px"}}></div>  
 
       {/* <LoadingSpinner size="small"/>
         <LoadingSpinner />
@@ -95,7 +90,6 @@ function App() {
       {/* <RetroBonuses /> */}
       {/* <OrderDetailCards /> */}
 
-      {/* <SelectMenu /> */}
     </QueryClientProvider>
   );
 }

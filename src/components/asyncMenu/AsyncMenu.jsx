@@ -16,12 +16,10 @@ const AsyncMenu = ({
   isLoading,
   isError,
   menuContent,
-  refetch,  
+  refetch,
 }) => {
+  let menuStateName = WAITING;
 
-let menuStateName = WAITING;
-
-    
   if (isLoading) {
     menuStateName = WAITING;
   } else if (isError) {
@@ -30,7 +28,7 @@ let menuStateName = WAITING;
     menuStateName = SUCCESS;
   }
 
-  console.log({menuStateName, menuContent})
+  console.log({ menuStateName, menuContent });
 
   return (
     <Menu
@@ -61,6 +59,7 @@ let menuStateName = WAITING;
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           key={menuStateName}
+          style={{width: "100%"}}
         >
           {renderMenuContent(menuStateName, menuColor, menuContent)}
         </motion.div>
@@ -71,9 +70,10 @@ let menuStateName = WAITING;
 
 const renderMenuContent = (menuStateName, menuColor, menuContent) => {
   if (menuStateName === WAITING) {
-
-    console.log("In Waitingggggg")
-    return <LoadingSpinner color={menuColor} />;
+    console.log("In Waitingggggg");
+    return <div style={{marginInline: "auto", display:"grid", alignItems: "center", justifyItems: "center"}}>
+        <LoadingSpinner color={menuColor} />
+    </div>;
   }
 
   if (menuStateName === SUCCESS) {
@@ -82,7 +82,9 @@ const renderMenuContent = (menuStateName, menuColor, menuContent) => {
 
   if (menuStateName === ERROR) {
     return (
-      <p style={{ textAlign: "center", width: 300, maxWidth:"100%" }}>მონაცემების ჩატვირთვა ვერ მოხერხდა. <br /> გთხოვთ სცადეთ მოგვიანებით</p>
+      <p style={{ textAlign: "center", width: 300, maxWidth: "100%" }}>
+        მონაცემების ჩატვირთვა ვერ მოხერხდა. <br /> გთხოვთ სცადეთ მოგვიანებით
+      </p>
     );
   }
 };

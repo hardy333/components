@@ -30,6 +30,7 @@ const RetroBonusDetails = () => {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>RetroBonusDetails</h1>
+      
       <RetroBonusDetailCards />
     </div>
   );
